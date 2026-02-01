@@ -1,9 +1,4 @@
-#!/usr/bin/env python3
-"""
-Performance Monitoring Module
-Student: [اسمك]
-Module: System Performance and Resource Tracking
-"""
+
 
 import psutil
 import time
@@ -13,7 +8,7 @@ from datetime import datetime
 
 def get_system_metrics():
     """
-    جمع كل مقاييس النظام المطلوبة
+
     """
     metrics = {}
     
@@ -23,7 +18,7 @@ def get_system_metrics():
     
     # ===== Memory Metrics =====
     memory = psutil.virtual_memory()
-    mem_total = memory.total / (1024**3)  # تحويل لـ GB
+    mem_total = memory.total / (1024**3)  #   
     mem_used = memory.used / (1024**3)
     mem_available = memory.available / (1024**3)
     mem_percent = memory.percent
@@ -40,7 +35,7 @@ def get_system_metrics():
     uptime_hours = uptime_seconds / 3600
     
     # ===== Process Information =====
-    # نجمع كل العمليات
+
     processes = []
     for proc in psutil.process_iter(['pid', 'name', 'cpu_percent', 'memory_percent', 'status']):
         try:
@@ -48,7 +43,7 @@ def get_system_metrics():
         except (psutil.NoSuchProcess, psutil.AccessDenied):
             continue
     
-    # عدّ Running vs Sleeping
+    #  Running vs Sleeping
     running_count = 0
     sleeping_count = 0
     for p in processes:
@@ -59,13 +54,13 @@ def get_system_metrics():
     
     total_processes = len(processes)
     
-    # Top 3 by CPU (نرتب تنازلي)
+    # Top 3 by CPU 
     top_cpu = sorted(processes, key=lambda x: x.info['cpu_percent'] or 0, reverse=True)[:3]
     
     # Top 3 by Memory
     top_mem = sorted(processes, key=lambda x: x.info['memory_percent'] or 0, reverse=True)[:3]
     
-    # نحط كل حاجة في dictionary
+    #   dictionary
     metrics = {
         'timestamp': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
         'cpu_percent': cpu_percent,
@@ -93,14 +88,14 @@ def get_system_metrics():
 
 def display_usage():
     """
-    عرض أداء النظام الحالي (بسيط زي المنهج)
+
     """
     print("-" * 60)
     print("--- System Performance ---")
     
     metrics = get_system_metrics()
     
-    # عرض البيانات باستخدام f-strings (من المنهج)
+
     print(f"Timestamp: {metrics['timestamp']}")
     print(f"\nCPU Usage: {metrics['cpu_percent']}%")
     print(f"Load Average: {metrics['load_avg_1min']:.2f}, {metrics['load_avg_5min']:.2f}, {metrics['load_avg_15min']:.2f}")
@@ -124,7 +119,7 @@ def display_usage():
     print(f"  Running: {metrics['running_processes']}")
     print(f"  Sleeping: {metrics['sleeping_processes']}")
     
-    # Top 3 by CPU - باستخدام for loop (من المنهج)
+
     print(f"\nTop 3 by CPU:")
     for p in metrics['top_cpu']:
         name = p.info['name']
@@ -144,20 +139,20 @@ def display_usage():
 
 def log_metrics(metrics):
     """
-    حفظ المقاييس في ملفات (File Operations من المنهج)
+
     """
-    # نتأكد إن المجلد موجود
+
     if not os.path.exists('reports'):
         os.makedirs('reports')
     
-    # ===== ملف بسيط للـ visualization =====
-    # نستخدم with statement (من المنهج)
+
+
     with open('reports/system_log.txt', 'a') as f:
-        # CSV format: time, cpu, memory
+
         line = f"{metrics['timestamp']}, {metrics['cpu_percent']}, {metrics['mem_percent']}\n"
         f.write(line)
     
-    # ===== ملف تفصيلي =====
+
     with open('reports/detailed_log.txt', 'a') as f:
         f.write(f"\n{'='*50}\n")
         f.write(f"Time: {metrics['timestamp']}\n")
@@ -170,7 +165,7 @@ def log_metrics(metrics):
 
 def check_system():
     """
-    الدالة الرئيسية للعرض (تشتغل مرة واحدة)
+
     """
     metrics = display_usage()
     log_metrics(metrics)
@@ -179,11 +174,11 @@ def check_system():
 
 # ===== الـ Main =====
 if __name__ == "__main__":
-    # Loop بسيط (من المنهج)
+
     try:
         while True:
             check_system()
-            time.sleep(10)  # كل 10 ثواني زي المطلوب
+            time.sleep(10)  
     except KeyboardInterrupt:
-        # Exception handling (من المنهج)
+
         print("\n[*] Stopping performance monitor...")
