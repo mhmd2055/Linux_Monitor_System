@@ -1,0 +1,39 @@
+
+==================================================
+Event: FILE CREATION
+Time: 2026-02-01 19:30:59
+Name: new_file_test.txt
+Type: regular file
+Size: 0
+Owner: mohamed
+Group: mohamed
+Permissions: 664
+Access_time: 2026-02-01 19:30:56
+Modify_time: 2026-02-01 19:30:56
+Create_time: 2026-02-01 19:30:56
+
+==================================================
+Event: FILE MODIFICATION
+Time: 2026-02-01 19:30:59
+Filename: reports
+Old_size: 4096
+New_size: 4096
+Old_permissions: 775
+New_permissions: 775
+Old_modify_time: 2026-02-01 18:05:53
+New_modify_time: 2026-02-01 19:30:59
+Owner: mohamed
+Group: mohamed
+
+==================================================
+Event: FILE MODIFICATION
+Time: 2026-02-01 19:32:28
+Filename: new_file_test.txt
+Old_size: 0
+New_size: 0
+Old_permissions: 664
+New_permissions: 664
+Old_modify_time: 2026-02-01 19:30:56
+New_modify_time: 2026-02-01 19:32:24
+Owner: mohamed
+Group: mohamed
