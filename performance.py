@@ -18,7 +18,7 @@ def get_system_metrics():
     
     # ===== Memory Metrics =====
     memory = psutil.virtual_memory()
-    mem_total = memory.total / (1024**3)  # تحويل لـ GB
+    mem_total = memory.total / (1024**3)  #   
     mem_used = memory.used / (1024**3)
     mem_available = memory.available / (1024**3)
     mem_percent = memory.percent
