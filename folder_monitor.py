@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Modified by Haleem: Added directory monitoring logic and documentation.
 import os
 import time
 import pwd
