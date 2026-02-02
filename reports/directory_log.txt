@@ -37,3 +37,11 @@ Old_modify_time: 2026-02-01 19:30:56
 New_modify_time: 2026-02-01 19:32:24
 Owner: mohamed
 Group: mohamed
+
+[2026-02-02 09:53:26] ADDED: {'name': 'new_file_test.txt', 'type': 'regular file', 'size': 0, 'owner': 'mohamed', 'group': 'mohamed', 'permissions': '664', 'modify_time': '2026-02-02 09:53:24', 'modify_timestamp': 1770026004.5595746}
+
+[2026-02-02 09:56:31] REMOVED: new_file_test.txt
+
+[2026-02-02 10:04:01] ADDED: {'name': 'final_test.txt', 'type': 'regular file', 'size': 0, 'owner': 'mohamed', 'group': 'mohamed', 'permissions': '664', 'modify_time': '2026-02-02 10:03:59', 'modify_timestamp': 1770026639.3767803}
+
+[2026-02-02 10:04:37] REMOVED: final_test.txt
