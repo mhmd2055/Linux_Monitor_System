@@ -1,9 +1,4 @@
 #!/usr/bin/env python3
-"""
-Directory Monitoring Module
-Student: [Your Name]
-Module: Linux File System Analysis + Directory Monitoring
-"""
 
 import os
 import time
