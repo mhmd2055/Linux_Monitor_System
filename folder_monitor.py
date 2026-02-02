@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
 # Modified by Haleem: Added directory monitoring logic and documentation.
+
+"""
+Folder Monitoring Module
+Author: Haleem
+Purpose: Tracks file additions and removals and logs metadata.
+"""
+
 import os
 import time
 import pwd
